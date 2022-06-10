@@ -7,12 +7,13 @@ class Game():
         pygame.display.set_caption("My_Game")
         self.screen = pygame.display.set_mode((800,600))
 
-        tmx_data = pytmx.load_pygame("maps/carte/tiled/Level_0.tmx", pixelalpha=True)
+        tmx_data = pytmx.load_pygame("maps/carte_world.tmx", pixelalpha=True)
     
         self.map_data = pyscroll.data.TiledMapData(tmx_data)
         self.map_layer = pyscroll.BufferedRenderer(self.map_data, (800,600))
+        self.map_layer.zoom = 2
 
-        self.group = pyscroll.PyscrollGroup(map_layer=self.map_layer, default_layer=1)
+        self.group = pyscroll.PyscrollGroup(map_layer=self.map_layer, default_layer=2)
 
     def run(self):
         run = True
