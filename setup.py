@@ -8,6 +8,6 @@ def main():
     """
     This is the main function for the setup file.
     """
-    os.system('pip install -r requirements.txt')
+    os.system('python3.9 -m pip install -r requirements.txt')
 
 main()  # Call the main function
